@@ -3,6 +3,8 @@
 ---
 AI Junction exposes a Discord interface for generating text and images using LMStudio (or any OpenAI API interface) and ComfyUI back-ends. The bot allows users to manage their own configurations for both LLM prompting and image generation, as well as generate content in-server using custom prompts.
 
+#### Support Discord: https://discord.gg/7B2ZQhAB2m
+
 ## Features
 
 - LLM-based text generation using LMStudio
