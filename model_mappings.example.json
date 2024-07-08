@@ -1,0 +1,17 @@
+{
+    "maps": [
+        {
+            "model": "anythingMidjourneyV4_v1.ckpt",
+            "display_name": "Anything Midjourney V4"
+        },
+        {
+            "model": "sd_xl_turbo_1.0_fp16.safetensors",
+            "display_name": "SD XL Turbo"
+        },
+        {
+            "model": "unfiltredai.safetensors",
+            "display_name": "Unfiltered AI"
+        }
+    ],
+    "default_model": "sd_xl_turbo_1.0_fp16.safetensors"
+}
