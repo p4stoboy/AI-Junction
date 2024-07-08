@@ -1,5 +1,5 @@
 {
-    "name": "AI Junction",
+    "name": "ai-junction",
     "version": "1.0.0",
     "description": "Discord wrapper for LMStudio and ComfyUI servers.",
     "main": "dist/index.js",

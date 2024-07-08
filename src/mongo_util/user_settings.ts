@@ -45,6 +45,5 @@ export async function ensureUserConfigs(userId: string): Promise<UserSettings> {
 
 
 export async function getActiveUserSettings(userId: string): Promise<UserSettings> {
-    const userSettings = await ensureUserConfigs(userId);
-    return userSettings;
+    return await ensureUserConfigs(userId);
 }

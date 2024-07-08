@@ -1,4 +1,4 @@
-import { Client, Events, GatewayIntentBits, Interaction } from 'discord.js';
+import { Events, GatewayIntentBits, Interaction } from 'discord.js';
 import { config } from 'dotenv';
 import { handleInteraction } from './command_util/interaction_handlers.js';
 import { connectToDatabase } from "./mongo_util/mongo_connection.js";

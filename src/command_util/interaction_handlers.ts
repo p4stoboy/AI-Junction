@@ -11,8 +11,7 @@ import {
     TextInputBuilder,
     TextInputStyle,
     ButtonBuilder,
-    ButtonStyle,
-    MessageComponentInteraction
+    ButtonStyle
 } from 'discord.js';
 import { ImageConfigModel, GptConfigModel, UserSettingsModel } from '../mongo_models/settings.js';
 import { loadModelMappings } from "./model_mappings.js";
