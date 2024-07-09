@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -20,13 +20,13 @@ interface ModelMappingsFile {
 let cachedMappings: ModelMapping[] | null = null;
 let defaultModel: string | null = null;
 
-export async function loadModelMappings(): Promise<ModelMapping[]> {
+export function loadModelMappings(): ModelMapping[] {
     if (cachedMappings) {
         return cachedMappings;
     }
 
     try {
-        const fileContent = await fs.readFile(modelMappingsPath, 'utf-8');
+        const fileContent = fs.readFileSync(modelMappingsPath, 'utf-8');
         const mappingsFile: ModelMappingsFile = JSON.parse(fileContent);
 
         cachedMappings = mappingsFile.maps;

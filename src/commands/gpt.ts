@@ -50,7 +50,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
         // }
         const res = `**${prompt}**\n*${content}`.slice(0, 1997);
 
-        await interaction.editReply(`${res}**`);
+        await interaction.editReply(`${res}*`);
     } catch (error) {
         console.error(error);
         await interaction.editReply('An error occurred while processing your request.');

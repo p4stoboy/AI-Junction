@@ -14,17 +14,23 @@ interface GPTResponse {
  * Send a request to the GPT model and return the response.
  * @param prompt The user's input prompt
  * @param system The system message to set the context
+ * @param max_tokens The maximum number of tokens to generate
  * @returns A promise that resolves to the GPT response
  * @throws Error if the request fails or the response is invalid
  */
-export const gpreq = async (prompt: string, system: string): Promise<GPTResponse> => {
-    const req = {
-        messages: [
+export const gpreq = async (prompt: string | string[], system: string, max_tokens?: number): Promise<GPTResponse> => {
+    const messages = [
             { role: "system", content: system },
-            { role: "user", content: prompt }
-        ],
+    ];
+    if (Array.isArray(prompt)) {
+        prompt.forEach(p => messages.push({ role: "user", content: p }));
+    } else {
+        messages.push({ role: "user", content: prompt });
+    }
+    const req = {
+        messages,
         temperature: 0.975,
-        max_tokens: process.env.MAX_GPT_TOKENS,
+        max_tokens: max_tokens || Number(process.env.MAX_GPT_TOKENS),
         stream: false
     };
     console.log('LLM Request executing...');
