@@ -1,7 +1,8 @@
 import { GptConfigModel, ImageConfigModel, UserSettingsModel } from '../mongo_models/settings.js';
 import { UserSettings, GptConfig, ImageConfig } from '../types/index.js';
-import { getDefaultModel} from "../command_util/model_mappings";
+import {getDefaultModel, loadModelMappings} from "../command_util/model_mappings";
 
+loadModelMappings();
 
 export const DEFAULT_GPT_CONFIG: Omit<GptConfig, 'userId' | '_id'> = {
     configName: 'Default',
